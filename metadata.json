@@ -1,0 +1,6 @@
+{
+  "name": "Academia",
+  "description": "Modern academic homework organizer with live cloud updates, urgency tracking, and instructor approval.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

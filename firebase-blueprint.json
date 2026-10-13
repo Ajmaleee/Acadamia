@@ -1,0 +1,54 @@
+{
+  "entities": {
+    "User": {
+      "path": "users/{userId}",
+      "fields": {
+        "name": { "type": "string", "constraints": { "min": 2, "max": 24 } },
+        "status": { "type": "string", "enum": ["PENDING", "APPROVED", "DENIED", "BLOCKED"] },
+        "role": { "type": "string", "enum": ["STUDENT", "ADMIN"] },
+        "createdAt": { "type": "timestamp" },
+        "lastSeenAt": { "type": "timestamp" }
+      }
+    },
+    "Homework": {
+      "path": "homework/{homeworkId}",
+      "fields": {
+        "title": { "type": "string", "constraints": { "min": 1, "max": 80 } },
+        "description": { "type": "string", "constraints": { "max": 600 } },
+        "subjectId": { "type": "string" },
+        "dueAt": { "type": "number" },
+        "effortMinutes": { "type": "number" },
+        "authorName": { "type": "string" },
+        "authorUid": { "type": "string" },
+        "pinned": { "type": "boolean" },
+        "status": { "type": "string", "enum": ["ACTIVE", "PENDING_REVIEW", "HIDDEN"] },
+        "createdAt": { "type": "timestamp" }
+      }
+    },
+    "Subject": {
+      "path": "subjects/{subjectId}",
+      "fields": {
+        "name": { "type": "string" },
+        "colorHex": { "type": "string" },
+        "iconKey": { "type": "string" },
+        "orderNum": { "type": "number" },
+        "archived": { "type": "boolean" }
+      }
+    },
+    "Completion": {
+      "path": "users/{userId}/completions/{homeworkId}",
+      "fields": {
+        "completedAt": { "type": "timestamp" }
+      }
+    },
+    "Announcement": {
+      "path": "announcements/{announcementId}",
+      "fields": {
+        "title": { "type": "string" },
+        "body": { "type": "string" },
+        "pinned": { "type": "boolean" },
+        "createdAt": { "type": "timestamp" }
+      }
+    }
+  }
+}
